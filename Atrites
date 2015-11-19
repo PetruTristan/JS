@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+	<head>
+				<title>iFrame</title>
+		
+	</head>
+	<body>
+		<p>This text is using styles for <b>all p elements</b></p>
+		<p style="color:blue;">This paragraph also uses inline styles</p>
+	</body>
+</html>
