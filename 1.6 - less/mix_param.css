@@ -1,0 +1,52 @@
+.subheader {
+  background: #aaa;
+  width: 100%;
+  margin-top: 10px;
+}
+.subheader_text {
+  margin-left: 20px;
+}
+.subheader_text {
+  text-transform: capitalize;
+}
+active {
+  border: 1px solid black;
+}
+.small,
+.wide {
+  opacity: 0.8;
+}
+.wide.green {
+  float: left;
+  color: green;
+}
+.wide.yellow {
+  background-color: yellow;
+}
+.button {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+h1 {
+  font-family: arial;
+}
+p {
+  font-family: serif;
+}
+.somediv {
+  margin: 10px;
+  padding: 20px;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 50px;
+  box-shadow: 10px 20px 1px #000;
+}
+.somediv:hover {
+  background: linear-gradient(45deg, red 20%, green 40%, yellow 50%);
+}
+.func {
+  border: 1px solid black;
+  min-width: 500px;
+  min-height: 500px;
+}

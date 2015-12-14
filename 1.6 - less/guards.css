@@ -1,0 +1,23 @@
+.class1 {
+  background-color: white;
+  width: 200px;
+}
+.class2 {
+  background-color: black;
+  width: 600px;
+}
+.someclass {
+  color: #cde;
+}
+.someclass2 {
+  margin: 20px;
+}
+.someclass3 {
+  left: 40cm;
+}
+.someclass4 {
+  margin: 0;
+}
+.abc:visited {
+  color: aliceblue;
+}

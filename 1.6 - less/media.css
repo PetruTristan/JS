@@ -1,0 +1,29 @@
+@media screen {
+  .content {
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .content .nav_left,
+  .content .article,
+  .content .aside {
+    float: left;
+  }
+  .content .nav_left,
+  .content .aside {
+    width: 20%;
+  }
+  .content .article {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content .nav_left,
+  .content .article,
+  .content .aside {
+    width: 100%;
+  }
+}
