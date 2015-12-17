@@ -4,42 +4,105 @@
 	<title>Tables</title>
 	</head>
 	<body>
-		<table border="1">
+		<table border="5">
 			<thead>
 				<h2>Table title</h2>
 			</thead>
 			<tbody>
 				<tr>
-					<th>First column</th>
-					<th>Second column</th>
-					<th rowspan="6">Five row th</th>
-				</tr>
-				<tr>
-					<td>Row 1, cell 1</td>
-					<td>Row 1, cell 2</td>
-				</tr>
-				<tr>
-					<td>Row 2, cell 1</td>
-					<td rowspan="2">2 row cell</td>
-				</tr>
-				<tr>
-					<td>Row 3, cell 1</td>
+					<th>1 column</th>
+					<th>2 column</th>
+					<th>3 column</th>
+					<th>4 column</th>
+					<th>5 column</th>
+					<th>6 column</th>
+					<th>7 column</th>
+					<th>8 column</th>
+					<th>9 column</th>
+					<th>10 column</th>
 					
 				</tr>
 				<tr>
-					<td>Row 2, cell 2</td>
-					<td>Row 3, cell 1</td>
+					<td>Row 1</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
 				</tr>
 				<tr>
-					<td colspan="2">2 column row</td>					
+					<td>Row 2</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>Row 3</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+				</tr>
+				    <tr>
+					<td>Row 4</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td colspan="2">2 column row</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+				</tr>
+				
+				<tr>
+					<td colspan="10">10 column row</td>					
 				</tr>
 			</tbody>
-			<tfoot>
-				<tr>
-					<th colspan="3">Three cell footer</th>
-				</tr>
-			</tfoot>
 		</table>
-		<p>Я балдею от таблиц</p>
+		<p>Tractor dlya tractorista</p>
 	</body>
+	<head>
+		<style type="text/css">
+		td {
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			color: red;
+
+		}
+		th {
+			width: 100px;
+			height: 50px;
+		}
+		table {
+			width: 1000px;
+			background: linear-gradient(to left, #ddd 0%, #555 100%)
+		}
+		.heighlight td {
+			background-color: red;
+			font-weight: bold;
+		}
+
+		tr td: first-child {
+			background-color: green;
+		}
+
+		</style>
+	</head>
 </html>

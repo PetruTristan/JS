@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kortina</title>
+	</head>
+	<style>
+		 .container {
+                margin: 0px;
+            }
+           .slide {
+           	left: 300px;
+           	width: 300px;
+           	height: 300px;
+           	background-color: green;
+           	position: absolute;
+           	z-index: 1;
+           	transition: left 1s ease-in-out,
+           	background-color 3s linear;
+           }
+           .stay {
+           	width: 300px;
+           	height: 300px;
+           	background-color: green;
+           	float: left;
+           	z-index: 1;
+
+           }
+           .slide:hover {
+           	background-color: red;
+           	left: 600px;
+           	/*transition; margin-left 1s ease-in-out,
+           	background-color 3s linear;
+           */
+           }
+           .hello:hover ~ .slide {
+           	margin-left: 300px;
+           	background-color: red;
+           	/*transition: margin-left 1s ease-in-out,
+           	background-color 3s linear;*/
+           }
+           .Hello {
+           	left: 350px;
+           	top: 0;
+           	padding: 50px;
+           	font-size: 26px;
+           	color: magenta;
+           	position: absolute;
+           	z-index: 0;
+           }
+           .rotate {
+           	width: 300px;
+           	height: 300px;
+           	top: 400px;
+           	position: relative;
+           	background-color: white;
+           	rotateX: 250px;
+           	background: blue;
+           }
+	</style>
+	<body>
+	<div class="container">
+		<div class="stay"></div>
+		<div class="Hello">Hello</div>
+		<div class="slide">Brrrr</div>
+	</div>
+	<div class="rotate">Bonjourno</div>
+	
+	</body>
+</html>

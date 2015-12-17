@@ -1,0 +1,14 @@
+#someid {
+  background: #aaa;
+}
+.button {
+  border: 1px solid black;
+  background: #aaa;
+  border-radius: 3px;
+  width: 200px;
+  height: 50px;
+}
+.button:hover {
+  background: #789;
+}
+/*# sourceMappingURL=7_mixins_adv.css.map */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>2_Forms</title>
+	</head>
+	<body>
+		<h1>Form</h1>
+		<form>
+			<fieldset>
+				<legend>Data</legend>
+
+				<label for="name"><b>Name:</b></label>
+				<input type="text" id="name">
+
+				<br>
+
+				<label for="pass"><b>Password:</b></label>
+				<input type="password" id="pass">
+
+				<br>
+
+				<label>Email: <input type="email"></label>
+
+				<br>
+
+				<label>Date: <input type="date"></label>
+
+				<br>
+
+				<label for="sel">Sex:</label>
+				<select id="sel">
+					<option>Mail</option>
+					<option>Femail</option>
+				</select>
+				
+				<br>
+
+				</fieldset>
+
+				<fieldset>
+					<legend>Other</legend>
+
+					<label for="lang"><b>Language:</b></label>
+
+				<label><input type="checkbox" value="chk1" name="chk">Ukrainian</label>
+				<label><input type="checkbox" value="chk2" name="chk">Russian</label>
+				<label><input type="checkbox" value="chk3" name="chk">English</label>
+				<label><input type="checkbox" value="chk4" name="chk">Other</label>					
+			
+				
+				<br>
+
+ 				<label for="hobby"><b>Hobby:</b></label>
+
+				<label><input type="radio" name="radio" value="radio1">Programming</label>
+				<label><input type="radio" name="radio" value="radio2">Internet games</label>
+				<label><input type="radio" name="radio" value="radio3">Skying</label>
+				<label><input type="radio" name="radio" value="radio4">Other</label>
+
+				</fieldset>
+
+				<hr>
+				<input type="reset">
+				<input type="submit">
+
+				<hr>
+			</form>	
+			<div class="div1"></div>
+			<div class="div2"></div>	
+	</body>
+	<style>
+		.div {
+			width: 300px;
+			height: 100px;
+			border: 1px solid blue;
+		}
+
+			b {
+				color: red;
+			}
+	</style>
+</html>
