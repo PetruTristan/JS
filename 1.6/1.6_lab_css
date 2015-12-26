@@ -1,0 +1,16 @@
+    @padd: 15px 300px;
+    @back-col: lightcoral; // background color for header and footer
+    @back-col-gr: lightgray;
+    @colr: white;  //header and footer color of font
+
+    html, 
+    body {
+    height: 100%
+    }
+    .hdr-ftr {
+    background: @back-col;  
+    padding: @padd;  
+    color: @colr;  
+    box-sizing: border-box;
+    }
+

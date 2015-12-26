@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Google</title>
+		<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		#wrap {
+			margin: 0px;
+			background: #146e69;
+			width: 100%;
+			min-height: 600px;
+
+
+		}
+		#header {
+			background: #2b7014;
+			height: 60px;
+			width: calc(100%-40px);
+			padding: 20px;
+
+		}
+		 #nav {
+
+		 }
+		  .link_container {
+		 	background: #d2ff52;
+		 	text-align: center;
+		 	height: 40px;
+		 	padding-top: 40px;
+		 }
+		 .link_container .list {
+		 		color: black;
+		 		text-decoration: none;
+
+		 }
+
+		 .line > li{
+		 	display: inline-block;
+		 	padding: 0 40px;
+		 	border-right: 1px solid black;
+		 }
+
+		 .line li:last-child {
+		 	border-right: none;
+		 }
+
+
+		 .dropdown {
+		 	display: none;
+		 	position: absolute;
+		 	list-style: none;
+		 	margin-left: 40px;
+		 	background: #c28132;
+		 }
+		 .dropdown li {
+		 	padding: 10px;
+		 	width: 80px;
+		 	
+		 }
+
+		 
+		 .line li:hover .dropdown {
+		 	display: block;
+		 }
+			
+	
+		 #content{
+		 	min-height: 600px;
+		 	width: 60%;
+		 	margin: 0 auto;
+		 	
+		 	background: #f16f5c;
+		 }
+
+		 #content .menu, #content .article {
+		 	min-width: 
+		 }
+
+		 .menu {
+		 	display: inline-block;
+		 	width: 30%;
+		 	border: 1px solid black
+		 	vertical-align: top;
+
+		 }
+
+		 .menulist {
+		 	padding: 30px;
+
+		 }
+
+
+		 .article {
+		 	display: inline-block;
+		 	width: 65%;
+		 	border: 1px solid black;
+
+		 }
+
+		 #footer {
+
+
+		 }
+		 h1 {
+		 	line-height: 1,5em;
+		 }
+
+		</style>
+	</head>
+	<body>
+		
+			<div id="wrap">
+		<div id="header"><h1>Position</h1></div>
+		<div id="nav">
+			<div class="link_container">
+				<ul class="list line">
+					
+					<li><a href="#">Link</a>
+					
+					<ul class="dropdown">
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Link</a>
+					
+					<ul class="dropdown">
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li><li> <a href="#">Link</a></li><li> <a href="#">Link</a></li><li> <a href="#">Link</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Link</a>
+					
+					<ul class="dropdown">
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li>
+
+					</ul>
+				</li>
+				<li><a href="#">Link</a>
+					
+					<ul class="dropdown">
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li>
+						<li> <a href="#">Link</a></li>
+
+					</ul>
+				</li>
+			</ul>
+
+			<div class="menu">
+			
+			<ul class="menu">
+					<li> <a href="#">Link</a></li>
+					<li> <a href="#">Link</a></li>
+					<li> <a href="#">Link</a></li>
+					<li> <a href="#">Link</a></li>
+					<li> <a href="#">Link</a></li>
+
+			</ul>
+			</div>
+	
+		</div>
+		
+		<div id="footer">
+			<div class="content"></div>
+		</div>
+			</div>
+
+	</body>
+</html>
