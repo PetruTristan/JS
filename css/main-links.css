@@ -1,0 +1,14 @@
+			a:link {
+				font-size: 22px;
+				color: #29bfdd
+			}
+			a:visited {
+				color: black;
+			}
+			a:hover {
+				text-decoration: none;
+				color:#20aabb;
+				font-size: 24px;
+			}
+			a:active {
+				color: blue;

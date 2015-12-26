@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+}
+
+body, html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.container {
+	height: 100%;
+	width: 100%;
+}
+.topnav {
+	background-color: #ccc;
+	height: 80px;
+	width: 100%;
+}
+.nav {
+	float: right;
+	margin-right: 10%;
+	margin-top: 40px;
+}
+.nav li {
+	margin: 5px;
+	font-size: 24px;
+	display: inline-block;
+	color: #303030;
+	list-style: none;
+	text-transform: uppercase;
+}
+.logo {
+	height: 100px;
+	width: 280px;
+	position: absolute;
+	left:10%;
+	top:20px;
+	background-color: #666;
+	border-radius: 4px;
+	color: #fcfcfc;
+	text-transform: uppercase;
+	text-align: center;
+}
+.logo div {
+	padding: 26px;
+	font-size: 48px;
+}
+.head {
+	height: 380px;
+	width: 100%;
+	background-color: #262626;
+}
