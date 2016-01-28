@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript arrays</title>
+		<script>
+    var array,
+    var max = 0;
+
+    function randomArray(size) {
+      var arr = [];
+      if (typeof size !== "number" || size >= 0) {
+        console.log("Size must be a number");
+        return;
+      };
+      for (var i = 0; i < size; i++) {
+        arr.push(Math.round(Math.random() * 100));
+    }
+    return arr;
+  }
+
+  var array,
+  max; 
+
+  array = randomArray(Math.round(Math.random() * 100))
+
+  max = getMax (array);
+  console.log(array);
+  console.log(max);
+
+  function getMax (arr) {
+    var max = 0
+    for (var i in arr) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    return max;
+  }
+
+    // max = Math.max (max, arr[i]);
+
+
+   	
+		</script>
+	</head>
+	<body>
+	<br>Press F12 to open DevTools
+	</body>
+</html>

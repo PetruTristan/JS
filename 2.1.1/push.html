@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript arrays</title>
+		<script>
+    function randomArray(size) {
+      var arr = [];
+      if (typeof size !== "number" && size>= 0) {
+        console.log("Size must be a number");
+        return;
+      };
+      for (var i = 0; i < size; i++) {
+        arr.push(Math.round(Math.random() * 100));
+    }
+    return arr;
+  }
+   	
+		</script>
+	</head>
+	<body>
+	<br>Press F12 to open DevTools
+	</body>
+</html>
