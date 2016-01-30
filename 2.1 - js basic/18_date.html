@@ -34,7 +34,41 @@
 		    console.log(date);
         </script>
 	<body>
-        
+		<h1>Enter day</h1>
+        <input type="text" id="date">
+        <button id="get">get result</button>
+        <div id="result">Press button</div>
+        <script>
+        	(function (){
+        		var input = document.getElementById("date"),
+        			button = document.getElementById("get"),
+        			result = document.getElementById("result");
 
+        			button.addEventListener("click", showResult);
+
+        			function showResult () {
+        				result.innerHTML = calculate(input.value);
+        			}
+
+        			function calculate (value) {
+        				var currDate = new Date();
+        				var newDate = new Date();
+        				var daysArray = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        				var value = parseInt(value);
+
+        				if (isNaN(value) || value > 31) {
+        					return "Invalid date";
+        				}
+
+        				newDate.setDate(value);
+        				if (currDate.getMonth() !== newDate.getMonth()) {
+        					return "No day with this in this month";
+        				} else {
+        					return daysArray[newDate.getDay()-1];
+        				}
+        			}
+
+        	})()
+        </script>
 	</body>
 </html>
