@@ -1,8 +1,16 @@
+var size = parseInt(prompt("enter array size"));  
 var array,
 	max;
 
-
-array = randomArray(Math.round(Math.random() * 100));
+try {
+	array = randomArray(size);
+} catch (error) {
+	console.error(error.stack);
+	console.error(error.message);
+	console.error("Wrong arguments");
+} finally {
+	array = array ? array : [0];
+}
 
 max = getMax(array);
 
@@ -22,8 +30,8 @@ function getMax (arr) {
 function randomArray(size) {
 	var arr = [];
 
-	if (typeof size !== "number" || size < 0) {
-		console.log("Size must be a number");
+	if (typeof size !== "number" || isNaN(size) || size <= 0) {
+		throw new Error('Size must be a positive number');
 		return;
 	}
 
