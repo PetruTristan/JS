@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Forms</title>
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<form>
+		
+			<div class="number">
+             <div>number1</div>
+             <div>number1</div>
+             <div>Result</div>
+           	</div>
+				
+				<br>
+
+				<label><input type="radio" name="radios" value="radio1"> + </label>
+				<label><input type="radio" name="radios" value="radio2"> - </label>
+				<label><input type="radio" name="radios" value="radio3"> * </label>
+				<label><input type="radio" name="radios" value="radio3"> / </label>
+
+				<br>
+
+		
+			<script type="text/javascript">
+		
+  		var radios = document.getElementsByName("operations"),
+   number1 = document.getElementById("num1"),
+   number2 = document.getElementById("num2"), 
+  calculations = {
+   plus: function (a, b) {
+    return a + b;
+   },
+   minus: function (a, b) {
+    return a - b;
+   }
+  };
+
+  function getValue() {
+   var currValue;
+   for (var i = 0; i < radios.length; i++) {
+    currValue = radios[i].checked ? radios[i].value : currValue;
+   }
+   return currValue;
+  }
+
+  function calculate (e) {  
+   result.innerHTML = calculations[getValue()](number1.value, number2.value);  
+  }
+
+  number1.addEventListener("change", calculate);
+  number2.addEventListener("change", calculate);
+
+
+
+			</script>
+		</form>		
+	</body>
+</html>

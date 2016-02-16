@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "postname": "First",
+      "body": "Hello! It's my first post"
+    },
+    {
+      "postname": "Second",
+      "body": "I'm back!!!",
+      "id": 2
+    },
+    {
+      "postname": "Second",
+      "body": "I'm back!!!",
+      "id": 3
+    },
+    {
+      "postname": "Second",
+      "body": "I'm back!!!",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
