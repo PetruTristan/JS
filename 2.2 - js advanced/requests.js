@@ -1,11 +1,12 @@
 var myRequest = new XMLHttpRequest();
+var whatWeGot;
 
 	// open - открывает запрос с заданными параметрами.
 	// аргументы - тип запроса (GET, POST, PUT, PATCH, DELETE),
 	// uri - адрес, по которому мы отправляем запрос
 	// async (true, false) - выполнять ли запрос асинхронно
 
-	myRequest.open('GET', 'comments', true);
+	myRequest.open('GET', 'http://localhost:3000/comments', true);
 	/*
 		свойство readystate - одно из 5 значений
 		0 - Unitialized
@@ -47,7 +48,7 @@ var myRequest = new XMLHttpRequest();
 function getPosts () {
 	var myGetRequest = new XMLHttpRequest();
 
-	myGetRequest.open('GET', 'posts', true);
+	myGetRequest.open('GET', 'http://localhost:3000/posts', true);
 
 	myGetRequest.send(null);
 
@@ -56,6 +57,7 @@ function getPosts () {
 		if (myGetRequest.status === 200) {
 			console.log("Success!!!");
 			console.log(myGetRequest.responseText);
+			whatWeGot = JSON.parse(myGetRequest.responseText);
 		}
 	});
 }
@@ -64,7 +66,7 @@ function createPost (data) {
 
 	var myPostRequest = new XMLHttpRequest();
 
-	myPostRequest.open('POST', 'posts', true);
+	myPostRequest.open('POST', 'http://localhost:3000/posts', true);
 
 	//setRequestHeader - Задает заголовоки для запроса. 
 	//В данном случае, сервер принимает JSON, для этого устанавливаем тип содержимого
