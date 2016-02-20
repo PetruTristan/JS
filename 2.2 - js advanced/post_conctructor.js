@@ -8,9 +8,13 @@
 		this.element = document.createElement('div');
 		this.body = document.createElement('div');
 		this.body.classList.add("hidden");
+		this.body.classList.add("post_body");
 		this.header = document.createElement('div');
+		this.header.classList.add("post_header");
 		this.element.appendChild(this.header);
 		this.element.appendChild(this.body);
+		
+		this.initListeners();
 	}
 
 	Post.prototype.render = function () {
