@@ -69,7 +69,7 @@ var xhrUtils = (function () {
 		update: updatePost,
 		getOneOrAll: getPosts,
 		create: createPost
-	}
+	}  
 })();
 
 (function () {
