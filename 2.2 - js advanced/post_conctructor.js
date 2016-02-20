@@ -11,19 +11,32 @@
 		this.body.classList.add("post_body");
 		this.header = document.createElement('div');
 		this.header.classList.add("post_header");
+		this.header.toggle = document.createElement('span');
+		this.header.toggle.innerHTML = '+ ';
+		this.header.content = document.createElement('span');
+		this.header.appendChild(this.header.toggle);
+		this.header.appendChild(this.header.content);
 		this.element.appendChild(this.header);
 		this.element.appendChild(this.body);
-		
+
 		this.initListeners();
 	}
 
 	Post.prototype.render = function () {
 		this.body.innerHTML = this.content.body;
-		this.header.innerHTML = this.content.postname;
+		this.header.content.innerHTML = this.content.postname;
 	}
 
 	Post.prototype.toggleBody = function () {
 		this.body.classList.toggle("hidden");
+	}
+
+	Post.prototype.initListeners = function () {
+		var self = this;
+		this.header.toggle.addEventListener('click', function () {
+			self.toggleBody();
+			this.innerHTML = this.innerHTML === "+ " ? "- " : "+ ";
+		});
 	}
 
 	getPosts("", "posts", getAllPostsAndRener, failedRequest);
