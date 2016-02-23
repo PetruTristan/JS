@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title>Forms</title>
+	</head>
+	<body>
+		<h1>Form</h1>
+		<form>
+			<!-- <fieldset>	
+
+				<label>Name <input type="6" id="6"></label><br>
+			</fieldset> -->
+			<button>Name <input type="6" id="6"> </button>	
+			<div class="">
+
+             <div>Class1</div>
+             <div>Class2</div>
+             
+           	</div>
+			
+		</form>		
+		<script type="text/javascript">
+		var myRequest = new XMLHttpRequest();
+		var input = document.getElementById("Name");
+		var button = document.getElementById("button");
+		var Class1 = document.getElementById("Class1");
+		var Class2 = document.getElementById("Class2");
+
+		button.addEventListener("click", function () {
+			getPosts(input.value, "posts" renderPost, failedRequest)
+		});
+
+		function getPosts (id, callbackSuccess, callbackFailure) {
+	var myGetRequest = new XMLHttpRequest();
+
+	myGetRequest.open('GET', 'http://localhost:3000/posts/' = id, true);
+
+	myGetRequest.send(null);
+
+	myGetRequest.addEventListener("load", function () {
+		console.log("Request complete");
+		if (myGetRequest.status === 200) {
+			console.log("Success!!!");
+			console.log(myGetRequest.responseText);
+			whatWeGot = JSON.parse(myGetRequest.responseText);
+		}
+	});
+}
+		</script>
+	</body>
+</html>
