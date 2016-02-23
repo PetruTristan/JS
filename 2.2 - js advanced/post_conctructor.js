@@ -1,6 +1,7 @@
-(function () {
+var App = App || {};
+
+App.Post = (function () {
 	var container = document.getElementById("container");
-	var posts = [];
 
 	var Post = function (content) {
 		var body, header;
@@ -78,21 +79,7 @@
 		});
 
 	}
-
-	xhrUtils.getAll("posts", getAllPostsAndRener, failedRequest);
-
-	function getAllPostsAndRener (content) {
-		for (var i in content) {
-			posts[i] = new Post(content[i]);
-			container.appendChild(posts[i].element);
-		}
-	}
-
-	function failedRequest (response) {
-		console.error(responseText);
-	}
-
 	
-	
+	return Post;
 })()
 
