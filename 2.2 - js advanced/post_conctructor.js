@@ -49,7 +49,7 @@
 
 	Post.prototype.sendChanges = function () {		
 		this.content.body = this.body.innerHTML;
-		xhrUtils.update(this.content, 'posts', this.id, this.onUpdate.bind(this));
+		xhrUtils.update(this.content, this.id, 'posts', this.onUpdate.bind(this));
 	}
 
 	Post.prototype.onUpdate = function () {
