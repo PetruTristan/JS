@@ -1,77 +1,3 @@
-var xhrUtils = (function () {
-
-	function getPosts (id, locator, callbackSuccess, callbackFailure) {   
-		var myGetRequest = new XMLHttpRequest();
-
-		myGetRequest.open('GET', 'http://localhost:3000/' + locator + "/" + id, true);
-
-		myGetRequest.send(null);
-
-		myGetRequest.addEventListener("load", function () {
-			console.log("Request complete");
-			if (myGetRequest.status === 200) {
-				callbackSuccess(JSON.parse(myGetRequest.responseText));
-			} else {
-				callbackFailure(JSON.parse(myGetRequest.responseText));
-			}
-		});
-	}
-
-	function createPost (data, locator, callback) {
-
-		var myPostRequest = new XMLHttpRequest();
-
-		myPostRequest.open('PUT', 'http://localhost:3000/' + locator, true);
-
-		//setRequestHeader - Задает заголовоки для запроса. 
-		//В данном случае, сервер принимает JSON, для этого устанавливаем тип содержимого
-		myPostRequest.setRequestHeader("Content-Type", "application/json");
-
-		//JSON.stringify превращает JavaScript-обьект в JSON строку
-		myPostRequest.send(JSON.stringify(data));
-
-		myPostRequest.addEventListener("load", function () {
-			console.log("Request complete");
-			if (myPostRequest.status === 201) {
-				console.log("Success!!!");
-				callback(myPostRequest.responseText, myPostRequest);
-			}
-		});
-	}
-
-	function updatePost (data, locator, id, callback, failure) {
-		var newRequest = new XMLHttpRequest(),
-			uri = 'http://localhost:3000/' + locator + '/' + id;
-
-		newRequest.open('PUT', uri, true);
-
-		//setRequestHeader - Задает заголовоки для запроса. 
-		//В данном случае, сервер принимает JSON, для этого устанавливаем тип содержимого
-		newRequest.setRequestHeader("Content-Type", "application/json");
-
-		//JSON.stringify превращает JavaScript-обьект в JSON строку
-		newRequest.send(JSON.stringify(data));
-
-		newRequest.addEventListener("load", function () {
-			console.log("Request complete");
-			if (newRequest.status === 200) {
-				console.log("Success!!!");
-				if (callback) {
-					callback(newRequest.responseText, newRequest);					
-				}
-			} else if (failure) {
-				failure(newRequest.responseText);
-			}
-		});
-	}
-
-	return {
-		update: updatePost,
-		getOneOrAll: getPosts,
-		create: createPost
-	}  
-})();
-
 (function () {
 	var container = document.getElementById("container");
 	var posts = [];
@@ -153,7 +79,7 @@ var xhrUtils = (function () {
 
 	}
 
-	xhrUtils.getOneOrAll("", "posts", getAllPostsAndRener, failedRequest);
+	xhrUtils.getAll("posts", getAllPostsAndRener, failedRequest);
 
 	function getAllPostsAndRener (content) {
 		for (var i in content) {

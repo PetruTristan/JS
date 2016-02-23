@@ -20,9 +20,10 @@ var xhrUtils = (function () {
 		request("DELETE", null, id, locator, callbackSuccess, callbackFailure);
 	}
 
-	function request (type, data, locator, id, callback, failure) {
-		var newRequest = new XMLHttpRequest(),id = 
-			uri = 'http://localhost:3000/' + locator + '/' + id ? id : "";
+	function request (type, data, resourceId, locator, callback, failure) {
+		var newRequest = new XMLHttpRequest(),
+			id = resourceId ? resourceId : "",
+			uri = 'http://localhost:3000/' + locator + '/' + id;
 
 		newRequest.open(type, uri, true);
 
@@ -38,10 +39,10 @@ var xhrUtils = (function () {
 			if (newRequest.status === 200 || newRequest.status === 201) {
 				console.log("Success!!!");
 				if (callback) {
-					callback(newRequest.responseText, newRequest);					
+					callback(JSON.parse(newRequest.responseText), newRequest);					
 				}
 			} else if (failure) {
-				failure(newRequest.responseText);
+				failure(JSON.parse(newRequest.responseText));
 			}
 		});
 	}
