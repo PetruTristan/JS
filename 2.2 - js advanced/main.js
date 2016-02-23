@@ -1,12 +1,16 @@
 var App = App || {};
 
 App.main = (function () {
-	var posts = [];
+	var container = document.getElementById('container');
+
 	function getAllPostsAndRener (content) {
+		App.blog.initContainer();
 		for (var i in content) {
-			posts[i] = new App.Post(content[i]);
-			container.appendChild(posts[i].element);
+			App.blog.createPost(content[i]);
 		}
+		App.blog.createPostBlock(function () {
+			xhrUtils.getAll("posts", getAllPostsAndRener, failedRequest);
+		});
 	}
 
 	function failedRequest (response) {
@@ -14,6 +18,10 @@ App.main = (function () {
 	}
 
 	xhrUtils.getAll("posts", getAllPostsAndRener, failedRequest);
+
+	return {
+		failedRequest: failedRequest
+	}
 })()
 
 

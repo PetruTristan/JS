@@ -1,9 +1,67 @@
 var App = App || {};
 
-App.Post = (function () {
-	var container = document.getElementById("container");
+App.blog = (function () {
+	var posts = [];
+	var container;
 
-	var Post = function (content) {
+	return {
+		createPostBlock: function (handler) {
+			var head = document.createElement("input");
+			var body = document.createElement("input");
+			var create = document.createElement("button");
+			head.type = "text";
+			body.type = "text";
+			create.innerHTML = "Create";
+			container.appendChild(head);
+			container.appendChild(body);
+			container.appendChild(create);
+			create.addEventListener("click", function () {
+				xhrUtils.create({body: body.value, postname: head.value}, "posts", function () {
+					posts = []
+					container.innerHTML = "";
+					handler();
+				});			
+			});
+		},
+
+		removePost: function (post) {
+			container.removeChild(post.element);
+		},
+
+		createPost: function(data) {
+			var newPost = new this.Post(data, container);
+			var self = this;
+
+			newPost.header.del.addEventListener("click", function (e) {
+				xhrUtils.deleteRecord(newPost.id, "posts", function () {
+					self.removePost(newPost);
+				}, App.main.failedRequest);
+			});
+
+			posts.push(newPost);
+			container.appendChild(newPost.element);
+		},
+
+		getPostById: function (id) {
+			return posts.find(function (post) {
+				if (post.id === id) {
+					return true;
+				}
+			});
+		},
+
+		getPosts: function () {
+			return posts;
+		},
+
+		initContainer: function () {
+			container = document.getElementById('container');
+		}
+	}
+})();
+
+App.blog.Post = (function () {
+	var Post = function (content, cnt) { 
 		var body, header;
 		this.content = content;
 		this.element = document.createElement('div');
@@ -34,14 +92,18 @@ App.Post = (function () {
 	}
 
 	Post.prototype.createHeader = function () {		
+		var self = this;
 		this.header = document.createElement('div');
 		this.header.classList.add("post_header");
 		this.header.toggle = document.createElement('span');
 		this.header.toggle.innerHTML = '  + ';
 		this.header.content = document.createElement('span');
+		this.header.del = document.createElement('button');
+		this.header.del.innerHTML = "Delete"; 
 		this.header.appendChild(this.header.toggle);
+		this.header.appendChild(this.header.del);
 		this.header.appendChild(this.header.content);
-		this.element.appendChild(this.header);
+		this.element.appendChild(this.header);		
 	}
 
 	Post.prototype.toggleBody = function () {
@@ -77,9 +139,6 @@ App.Post = (function () {
 			this.classList.remove("post_body--focus");
 			self.sendChanges();
 		});
-
 	}
-	
 	return Post;
-})()
-
+})();
