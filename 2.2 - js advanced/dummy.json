@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "postname": "First",
-      "body": "Hello! It's my first postwww ww123123 222"
-    },
-    {
       "postname": "Second",
       "body": "I'm back!!! weqwe wewewwe 2",
       "id": 2
@@ -16,26 +11,21 @@
       "id": 3
     },
     {
-      "body": "qweqweqwe",
-      "postname": "qweqwewqe",
-      "id": 6
-    },
-    {
-      "body": "qweqwe",
-      "postname": "weqwe",
-      "id": 7
-    },
-    {
-      "body": "werwer",
-      "postname": "ewrer",
-      "id": 8
+      "body": 123123,
+      "postname": 321123,
+      "id": 13
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "postId": 2,
+      "body": 123,
+      "id": 1
+    },
+    {
+      "postId": 2,
+      "body": 123,
+      "id": 2
     }
   ],
   "profile": {
