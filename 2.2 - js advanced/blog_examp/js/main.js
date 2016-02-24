@@ -25,16 +25,26 @@ App.main = (function () {
 		});
 	}
 
-	function createPostBlock (handler) {
+	function createPostBlock () {
 		var head = document.createElement("input");
 		var body = document.createElement("input");
 		var create = document.createElement("button");
-		var wrap =  document.createElement("div");
+		var wrap =  document.createElement("div");		
+		var title = document.createElement('h2');	
+		var labelName = document.createElement('label');
+		var labelBody = document.createElement('label');
+		labelName.innerHTML = "Title: "
+		labelBody.innerHTML = "Text: "
 		head.type = "text";
-		body.type = "text";
+		body.type = "textarea";
+		title.innerHTML = "Create new post";
 		create.innerHTML = "Create";
-		wrap.appendChild(head);
-		wrap.appendChild(body);
+		wrap.classList.add("newpost");
+		labelName.appendChild(head);
+		labelBody.appendChild(body);
+		wrap.appendChild(title);
+		wrap.appendChild(labelName);
+		wrap.appendChild(labelBody);
 		wrap.appendChild(create);
 		document.body.appendChild(wrap);
 

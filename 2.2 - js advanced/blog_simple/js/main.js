@@ -25,22 +25,10 @@
 		});
 	}
 
-	function createPostBlock (handler) {
-		var head = document.createElement("input");
-		var body = document.createElement("input");
-		var create = document.createElement("button");
-		var wrap =  document.createElement("div");		
-		var title = document.createElement('h2');
-		head.type = "text";
-		body.type = "text";
-		title.innerHTML = "Create new post";
-		create.innerHTML = "Create";
-		wrap.classList.add("newpost");		
-		wrap.appendChild(title);
-		wrap.appendChild(head);
-		wrap.appendChild(body);
-		wrap.appendChild(create);
-		document.body.appendChild(wrap);
+	function createPostBlock () {
+		var head = document.getElementById("newpost_postname");
+		var body = document.getElementById("newpost_postbody");
+		var create = document.getElementById("create");
 
 		create.addEventListener("click", function () {
 			xhrUtils.create({body: body.value, postname: head.value }, "posts", function (data) {
@@ -155,7 +143,6 @@
 			var create = document.createElement('button');
 			var wrap = document.createElement('div');				
 			var title = document.createElement('span');
-			var self = this;
 			input.type = "text";
 			create.innerHTML = "Send";	
 			title.innerHTML = "New Comment:";	
