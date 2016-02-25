@@ -1,7 +1,5 @@
-define(function(require) {
+define(['./xhr_utils', './blog/post'], function(xhrUtils, Post) {
 	var container = document.getElementById('container');
-	var xhrUtils = require('xhr_utils');
-	var Post = require("./blog/post");
 	var posts = [];
 	var comments = [];
 

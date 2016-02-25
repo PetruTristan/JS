@@ -1,6 +1,5 @@
-define(function (require) {
-	var Comment = require("./comment");
-	var xhrUtils = require("../xhr_utils");
+define(['./comment', '../xhr_utils'], function (Comment, xhrUtils) {
+
 	var Post = function (content, comments) {
 		this.content = content;
 
@@ -110,7 +109,7 @@ define(function (require) {
 		this.bodyWrap.appendChild(this.commentBlock);
 		if (this.comments) {		
 			this.comments.forEach(function(comment) {
-				comment.el = new App.blog.Comment(comment, self.commentBlock);
+				comment.el = new Comment(comment, self.commentBlock);
 			});
 		}
 	}
@@ -131,7 +130,7 @@ define(function (require) {
 		this.bodyWrap.appendChild(wrap);
 		create.addEventListener('click', function () {
 			xhrUtils.create({postId: self.id, body: input.value}, "comments", function (data) {		
-				data.el = new App.blog.Comment(data, self.commentBlock);		
+				data.el = new Comment(data, self.commentBlock);		
 				self.comments.push(data);
 			}, xhrUtils.failedRequest);
 		});

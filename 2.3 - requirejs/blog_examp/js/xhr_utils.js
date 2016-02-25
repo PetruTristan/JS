@@ -1,4 +1,11 @@
 define(function (require) {
+	var xhrUtils = {
+		getByID: getByID,
+		getAll: getAll,
+		create: create,
+		update: update,
+		deleteRecord: deleteRecord
+	};
 
 	function getByID(id, locator, callbackSuccess, callbackFailure) {   
 		request("GET", null, id, locator, callbackSuccess, callbackFailure);
@@ -51,11 +58,5 @@ define(function (require) {
 		console.error(responseText);
 	}
 
-	return {
-		getByID: getByID,
-		getAll: getAll,
-		create: create,
-		update: update,
-		deleteRecord: deleteRecord
-	}  
+	return xhrUtils;
 });
