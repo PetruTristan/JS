@@ -1,6 +1,7 @@
-(function () {
+var App = App || {};
+
+App.Post = (function () {
 	var container = document.getElementById("container");
-	var posts = [];
 
 	var Post = function (content) {
 		var body, header;
@@ -29,9 +30,6 @@
 		this.body.classList.add("post_body");	
 		this.body.classList.add("post_body--normal");	
 		this.body.setAttribute("contenteditable", "");
-
-		
-
 		this.element.appendChild(this.body);
 	}
 
@@ -50,6 +48,19 @@
 		this.body.classList.toggle("hidden");
 	}
 
+	Post.prototype.sendChanges = function () {		
+		this.content.body = this.body.innerHTML;
+		xhrUtils.update(this.content, this.id, 'posts', this.onUpdate.bind(this));
+	}
+
+	Post.prototype.onUpdate = function () {
+		var self = this;
+		this.body.classList.add("post_body--update");
+		setTimeout(function () {
+			self.body.classList.remove("post_body--update");
+		}, 3000);
+	}
+
 	Post.prototype.initListeners = function () {
 		var self = this;
 		this.header.toggle.addEventListener('click', function () {
@@ -64,60 +75,10 @@
 		this.body.addEventListener("blur", function (e) {
 			this.classList.add("post_body--normal")
 			this.classList.remove("post_body--focus");
+			self.sendChanges();
 		});
 
-	}
-
-	getPosts("", "posts", getAllPostsAndRener, failedRequest);
-
-	function getAllPostsAndRener (content) {
-		for (var i in content) {
-			posts[i] = new Post(content[i]);
-			container.appendChild(posts[i].element);
-		}
-	}
-
-	function failedRequest (response) {
-		console.error(responseText);
-	}
-
-	function getPosts (id, locator, callbackSuccess, callbackFailure) {   
-		var myGetRequest = new XMLHttpRequest();
-
-		myGetRequest.open('GET', 'http://localhost:3000/' + locator + "/" + id, true);
-
-		myGetRequest.send(null);
-
-		myGetRequest.addEventListener("load", function () {
-			console.log("Request complete");
-			if (myGetRequest.status === 200) {
-				callbackSuccess(JSON.parse(myGetRequest.responseText));
-			} else {
-				callbackFailure(JSON.parse(myGetRequest.responseText));
-			}
-		});
-	}
-
-	function createPost (data) {
-
-		var myPostRequest = new XMLHttpRequest();
-
-		myPostRequest.open('POST', 'http://localhost:3000/posts', true);
-
-		//setRequestHeader - Задает заголовоки для запроса. 
-		//В данном случае, сервер принимает JSON, для этого устанавливаем тип содержимого
-		myPostRequest.setRequestHeader("Content-Type", "application/json");
-
-		//JSON.stringify превращает JavaScript-обьект в JSON строку
-		myPostRequest.send(JSON.stringify(data));
-
-		myPostRequest.addEventListener("load", function () {
-			console.log("Request complete");
-			if (myPostRequest.status === 201) {
-				console.log("Success!!!");
-				console.log(myPostRequest.responseText);
-			}
-		});
 	}
 	
+	return Post;
 })()
