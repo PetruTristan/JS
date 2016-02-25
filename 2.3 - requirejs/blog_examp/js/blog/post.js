@@ -1,8 +1,6 @@
-var App = App || {};
-
-App.blog = App.blog || {};
-
-App.blog.Post = (function () {
+define(function (require) {
+	var Comment = require("./comment");
+	var xhrUtils = require("../xhr_utils");
 	var Post = function (content, comments) {
 		this.content = content;
 
@@ -68,7 +66,7 @@ App.blog.Post = (function () {
 			self.sendChanges();
 		});		
 
-		this.header.del.addEventListener("click", function (e) {
+		this.header.del.addEventListener("click", function (e) {			
 			e.stopPropagation();
 			xhrUtils.deleteRecord(self.id, "posts", function () {
 				self.destroy();
@@ -140,4 +138,4 @@ App.blog.Post = (function () {
 	}
 
 	return Post;
-})();
+});
