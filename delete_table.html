@@ -1,0 +1,39 @@
+<script language="JavaScript"> 
+function delete_tr(obj) 
+    { 
+    var num_tr=obj.parentNode.parentNode. sectionRowIndex 
+    document.getElementById("tbl").tBodies[0].deleteRow(num_tr) 
+    } 
+function up_tr(obj) 
+    { 
+    var num_tr=obj.parentNode.parentNode. sectionRowIndex 
+    if (num_tr!=0) document.getElementById("tbl").tBodies[0].moveRow(num_tr, num_tr-1) 
+    } 
+function down_tr(obj) 
+    { 
+    var num_all_tr=obj.parentNode.parentNode.parentNode.childNodes.length 
+    var num_tr=obj.parentNode.parentNode sectionRowIndex 
+    if (num_tr!=num_all_tr-1) document.getElementById("tbl").tBodies[0].moveRow(num_tr, num_tr+1) 
+    } 
+</script> 
+</head> 
+<body> 
+<table id="tbl" width="400" border="1"> 
+    <tr> 
+        <td width="10"><b>0</b></td> 
+        <td><a href="#" onclick="delete_tr(this)">удалить строку</a></td> 
+        <td><a href="#" onclick="up_tr(this)">поднять строку</a>&nbsp;&nbsp;<a href="#" onclick="down_tr(this)">опустить строку</a></td> 
+    </tr> 
+    <tr> 
+        <td width="10"><b>1</b></td> 
+        <td><a href="#" onclick="delete_tr(this)">удалить строку</a></td> 
+        <td><a href="#" onclick="up_tr(this)">поднять строку</a>&nbsp;&nbsp;<a href="#" onclick="down_tr(this)">опустить строку</a></td> 
+    </tr> 
+    <tr> 
+        <td width="10"><b>2</b></td> 
+        <td><a href="#" onclick="delete_tr(this)">удалить строку</a></td> 
+        <td><a href="#" onclick="up_tr(this)">поднять строку</a>&nbsp;&nbsp;<a href="#" onclick="down_tr(this)">опустить строку</a></td> 
+    </tr> 
+</table> 
+</body> 
+</html>

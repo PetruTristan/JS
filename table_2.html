@@ -1,0 +1,37 @@
+<script language="JavaScript"> 
+function createTable() 
+    { 
+     
+    var newElem=document.createElement("table");
+    newElem.border=1;
+     
+    var newRow=newElem.insertRow(0);/
+    var newCell = newRow.insertCell(0);ц 
+    newCell.width="200";
+    newCell.align="center";
+    newCell.innerHTML="<b>строка 1 столбец 1</b>";/
+     
+    var newCell = newRow.insertCell(-1);
+    newCell.width="400";
+    newCell.align="center";
+    newCell.innerText="<b>строка 1 столбец 2</b>"; 
+     
+    var newRow=newElem.insertRow(1);/ 
+    var newCell = newRow.insertCell(0); 
+    newCell.width="200";
+    newCell.align="center";
+     
+    addText=document.createTextNode("<b>строка 2 столбец 1</b>"); 
+    newCell.appendChild(addText); 
+     
+    var newCell = newRow.insertCell(-1);
+    newCell.width="400";
+    newCell.align="center";
+    addElem=document.createElement("b");
+    addText=document.createTextNode("строка 2 столбец 2");
+    addElem.appendChild(addText);addElem) 
+    newCell.appendChild(addElem);
+     
+    document.body.appendChild(newElem);/
+    } 
+</script>
