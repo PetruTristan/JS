@@ -1,0 +1,27 @@
+<html>
+     <head></head>
+     <body>
+          <h1 id="head">Header 123</h1>
+          <div>
+          <ul class="list" id="list">
+           
+               <li>1 point</li>
+               <li>2 point</li>
+               <li>3 point</li>
+     </ul>
+     </div>
+     <script>
+          var head = document.getElementById("head");
+          head.style.color ="red";
+          var list = document.getElementById("list");
+          list.style.color = "blue";
+     </script>
+</body>
+</html>
+<body>
+<script>
+      var list = document.getElementsByTagName('ul')[0];
+      var newLi = document.createElement('li');
+      newLi.innerHtml = "New item";
+     list.firstElementChild = newLi;
+</script>
